@@ -44,12 +44,12 @@ export function makePlayer(){
                 this.controlHandlers = [];
                 this.controlHandlers.push(
                     k.onKeyPress((key) => {
-                        if(key == "space"){
+                        if(key == "space" || key == "up"){
                             if(this.curAnim() != "jump") this.play("jump");
                             this.doubleJump();
                         }
 
-                        if(key == "z" && this.curAnim() != "attack" && this.isGrounded()){
+                        if((key == "z" || key == "shift" )&& this.curAnim() != "attack" && this.isGrounded()){
                             this.isAttacking = true;
                             this.add([ // hitbox for sword attack
                                 k.pos(this.flipX ? -25 : 0, 10), // flipX allows a sprite to flip in mirror
@@ -72,7 +72,7 @@ export function makePlayer(){
                 ),
                 this.controlHandlers.push(
                     k.onKeyDown((key) => {
-                        if(key == "left" && !this.isAttacking){
+                        if((key == "left" || key == "a") && !this.isAttacking){
                             if(this.curAnim() != "run" && this.isGrounded()){
                                 this.play("run");
                             }
@@ -82,7 +82,7 @@ export function makePlayer(){
                         }
                     }),
                     k.onKeyDown((key) => {
-                        if(key == "right" && !this.isAttacking){
+                        if((key == "right" || key == "d") && !this.isAttacking){
                             if(this.curAnim() != "run" && this.isGrounded()){
                                 this.play("run");
                             }

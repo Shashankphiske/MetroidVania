@@ -23,7 +23,7 @@ k.scene("intro", () => {
   setBgColor(k, "#20214a");
   k.add(
     makeNotificationBox(
-      "Escape The Factory!\nUse arrow keys to move, space to jump, \nz to attack and arrow keys for movement.\n\nPress Enter To Start"
+      "Escape The Factory!\nUse arrow keys to move or a and d, space to jump, shift or z to attack,\n\nPress Enter To Start"
     )
   );
   k.onKeyPress("enter", () => {
